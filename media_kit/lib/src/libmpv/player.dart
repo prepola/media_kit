@@ -406,6 +406,22 @@ class Player extends PlatformPlayer {
     calloc.free(value);
   }
 
+  @override
+  Future<void> setSpeed(double speed) async {
+    final ctx = await _handle.future;
+    final name = 'speed'.toNativeUtf8();
+    final value = calloc<Double>();
+    value.value = speed;
+    _libmpv?.mpv_set_property(
+      ctx,
+      name.cast(),
+      generated.mpv_format.MPV_FORMAT_DOUBLE,
+      value.cast(),
+    );
+    calloc.free(name);
+    calloc.free(value);
+  }
+
   /// Sets the playback rate of the [Player]. Defaults to `1.0`.
   @override
   Future<void> setRate(double rate) async {

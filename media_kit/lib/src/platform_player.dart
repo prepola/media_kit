@@ -266,6 +266,12 @@ abstract class PlatformPlayer {
     );
   }
 
+  FutureOr<void> setSpeed(double speed) {
+    throw UnimplementedError(
+      '[PlatformPlayer.speed] is not implemented.',
+    );
+  }
+
   FutureOr<void> setRate(double rate) {
     throw UnimplementedError(
       '[PlatformPlayer.rate] is not implemented.',
