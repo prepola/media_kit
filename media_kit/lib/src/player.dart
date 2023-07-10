@@ -227,6 +227,10 @@ class Player {
     return platform?.setVolume(volume);
   }
 
+  FutureOr<void> setSpeed(double speed) {
+    return platform?.setSpeed(speed);
+  }
+
   /// Sets the playback rate of the [Player].
   /// Defaults to `1.0`.
   FutureOr<void> setRate(double rate) {
